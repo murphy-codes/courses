@@ -1,0 +1,18 @@
+<hr>
+<button 
+  class="btn btn-primary" 
+  (click)="onToggleDetails()">{{ showHide }} Details</button>
+<p *ngIf="showDetails">Secret Password = tuna</p>
+<div *ngIf="toggles.length > 0">
+  <h3>Toggle log:</h3>
+  <!-- <p 
+    *ngFor="let toggle of toggles"
+    [ngClass]="{fifth: toggle.id > 4}">
+    {{ toggle.timestamp }}
+  </p> -->
+  <p 
+    *ngFor="let toggle of toggles; let i = index"
+    [ngClass]="{fifth: i >= 4}">
+    {{ toggle }}
+  </p>
+</div>
